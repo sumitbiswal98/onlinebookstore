@@ -37,7 +37,7 @@ pipeline
                             
                             if(!buildConfigExists)
                             {
-                                openshift.newBuild("--name=onlinebookstore-image", "--docker-image=registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel7", "--binary")
+                                openshift.newBuild("--name=onlinebookstore-image", "--docker-image=registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift", "--binary")
                             }
                             
                             openshift.selector("bc", "onlinebookstore").startBuild("--from-file=target/onlinebookstore-0.0.1-SNAPSHOT.war", "--follow")
