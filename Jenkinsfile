@@ -37,7 +37,7 @@ pipeline
                             
                             if(!buildConfigExists)
                             {
-                                openshift.newBuild("--name=image-onlinebookstore", "--docker-image=registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift", "--binary")
+                                openshift.newBuild("--name=onlinebookstore", "--docker-image=registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift", "--binary")
                             }
                             
                             openshift.selector("bc", "onlinebookstore").startBuild("--from-file=target/dependency/webapp-runner.jar", "--follow")
